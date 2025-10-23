@@ -19,6 +19,14 @@ type RNMSALNativeModule = {
   signout(params: MSALSignoutParams): Promise<boolean>;
 };
 
-const RNMSAL: RNMSALNativeModule = NativeModules.RNMSAL;
+const RNMSAL = NativeModules.RNMSAL;
 
-export default RNMSAL;
+if (!RNMSAL) {
+  throw new Error(
+    'Native module RNMSAL is not available. ' +
+    'Please ensure you have linked the native module correctly. ' +
+    'Run: npx react-native link react-native-msal (or use Expo config plugin for Expo projects)'
+  );
+}
+
+export default RNMSAL as RNMSALNativeModule;

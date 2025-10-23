@@ -17,8 +17,15 @@ export class PublicClientApplication implements IPublicClientApplication {
 
   public async init() {
     if (!this.isInitialized) {
-      await RNMSAL.createPublicClientApplication(this.config);
-      this.isInitialized = true;
+      try {
+        await RNMSAL.createPublicClientApplication(this.config);
+        this.isInitialized = true;
+      } catch (error) {
+        throw new Error(
+          `Failed to initialize PublicClientApplication: ${error instanceof Error ? error.message : String(error)}. ` +
+          'Ensure the native MSAL module is properly linked and configured.'
+        );
+      }
     }
     return this;
   }

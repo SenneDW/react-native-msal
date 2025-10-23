@@ -26,8 +26,9 @@
   ],
   "author": "Athul Mithran, Stefan Borg, Marcus Engebretsen",
   "dependencies": {
-    "@azure/msal-browser": "^2.1.0",
-    "@expo/config-plugins": "^4.0.6"
+    "@azure/msal-browser": "^3.15.0",
+    "@azure/msal-common": "^14.15.0",
+    "@expo/config-plugins": "^7.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",

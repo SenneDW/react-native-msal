@@ -65,8 +65,10 @@ const scopes = ['scope1', 'scope2'];
 const pca = new PublicClientApplication(config);
 try {
   await pca.init();
+  console.log('MSAL initialized successfully');
 } catch (error) {
-  console.error('Error initializing the pca, check your config.', error);
+  console.error('Error initializing MSAL. Check your config and ensure native modules are properly linked.', error);
+  // For detailed troubleshooting, see DEPRECATION_FIX.md
 }
 
 // Acquiring a token for the first time, you must call pca.acquireToken
