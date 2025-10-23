@@ -4,8 +4,8 @@
   "description": "React Native wrapper for iOS and Android",
   "main": "./index.js",
   "types": "./main.d.ts",
-  "license": "Proprietary",
-  "repository": "https://github.com/nordicbraintech/react-native-msal",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/SenneDW/react-native-msal",
   "private": true,
   "scripts": {
     "lint": "eslint src --ext .ts,.tsx",
